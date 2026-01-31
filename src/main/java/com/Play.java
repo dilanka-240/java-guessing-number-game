@@ -4,17 +4,21 @@ public class Play {
 
     public void play() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Guess the number: ");
-        int guess = scan.nextInt();
+        int guess = 0;
         int number = (int) (Math.random() * 100);
-        if (guess < number) {
-            System.out.println("Too Low");
-        }
-        if (guess > number) {
-            System.out.println("Too High");
-        }
-        if (guess == number) {
-            System.out.println("Correct");
+        while (guess != number) {
+            System.out.print("\nGuess the number between 1 to 100: ");
+            guess = scan.nextInt();
+            if (guess < number) {
+                System.out.println("Too Low\n");
+            }
+            if (guess > number) {
+                System.out.println("Too High\n");
+            }
+            if (guess == number) {
+                System.out.println("\n**Congratulations! your answe is correct**");
+            }
+
         }
     }
 }
